@@ -1,0 +1,32 @@
+<header>
+    <div class="bar-nav">
+        <nav class="navbar navbar-expand-md w-100">
+            <!-- Logo -->
+            <a class="navbar-brand display-4 logo edit-link" href="/">Agenda</a>
+            <!-- Menu Hamburger -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#area-nav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- Navigation -->
+            <div id="area-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <% if(user) { %>
+                    <li class="nav-item">
+                        <a class="edit-link nav-link" href="/contact">Register contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="edit-link nav-link" href="/login/logout">Logout</a>
+                    </li>
+                    <% } else { %>
+                    <li class="nav-item">
+                        <a class="edit-link nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="edit-link nav-link" href="/login/account">Create Account</a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

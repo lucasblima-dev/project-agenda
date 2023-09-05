@@ -1,0 +1,53 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+
+<main class="container my-5">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <%- include('includes/messages') %>
+            <div class="row my-5">
+                <div class="area-login col-lg-6">
+                    <h2 class="mb-5 text-dark"><span class="subtext">Lo</span>gin</h2>
+                    <form class="form-login" action="/login/login-account" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="input-container mb-3">
+                            <label for="login">
+                                <i class="fa-regular fa-user fa-lg"></i>
+                            </label>
+                          <input class="w-100" type="email" name="email" placeholder="Enter your login">
+                          <div class="text-danger feedback"></div>
+                        </div>
+                        <div class="input-container mb-3">
+                            <label for="senha">
+                                <i class="fa-solid fa-lock fa-lg"></i>
+                            </label>
+                            <input class="w-100 is-invalid" type="password" name="password" placeholder="Enter your password">
+                            <div class="text-danger feedback"></div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn bt-access btn-login">Sign In</button>
+                        </div>
+                        <div class="link-login-account p-0">
+                            <span class="mr-1">Don't have an account?</span><a class="link-account" href="/login/account">Sign-up
+                                now</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block annunce">
+                    <div class="border-effect">
+                        <h2 class="text-center my-5 text-light">Hello Again!</h2>
+                        <p class="text-center">
+                            Enjoy your Agenda! Add contacts, edit and much more!
+                        </p>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</main>
+
+</script>
+
+<%- include('includes/footer.ejs') %>

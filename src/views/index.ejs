@@ -1,0 +1,50 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+
+<main class="container my-5">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 my-3">
+            <%- include('includes/messages') %>
+            <div class="mt-4">
+                <%if(!user) { %>
+                    <h1 class="my-5 p-4 text-center text-light">Make login to see your Agenda!</h1>
+                <%} else { %>
+                    <%if(contacts.length === 0) { %>
+                        <h1 class="my-5 text-center text-light">Your Agenda is empty!</h1>
+                    <% } else { %>
+                        <h1 class="text-center text-light">My Agenda</h1>
+    
+                        <table class="table table-responsive my-5">
+                            <thead class="bg-transparent text-center text-white">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Last&nbsp;name</th>
+                                    <th>Contact</th>
+                                    <th>E-mail</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center bg-light">
+                                <% contacts.forEach(contact => { %>
+                                    <tr>
+                                        <td><%= contact.firstName %></td>
+                                        <td><%= contact.lastName %></td>
+                                        <td class="text-nowrap"><%= contact.cellphone %></td>
+                                        <td class="text-nowrap"><%= contact.email %></td>
+                                        <td><a href="/contact/<%= contact._id %>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                        <td><a href="/contact/delete/<%= contact._id %>"><i class="fa-solid fa-trash"></i></a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</main>
+
+<%- include('includes/footer.ejs') %>

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+
+:root {
+  --color-pd: rgb(127, 54, 201);
+}
+
+/* ***SELETORES*** */
+
+html, body {
+  background: linear-gradient(to top, rgba(194, 179, 209, 0), rgba(154, 106, 201, 0.4) 17%, rgba(127, 54, 201, 0.6) 82%);
+  font-family: 'Poppins', "Bebas Neue", sans-serif;
+  font-weight: bold;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 4.5em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+i, label {
+  color: var(--color-pd);
+}
+
+tr th {
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 1.2em;
+}
+
+/* ***NAVBAR*** */
+
+.bar-nav {
+  display: flex;
+  background-color: #fff;
+}
+
+@media (min-width: 660px) {
+  .bar-nav nav {
+    margin: 0 100px;
+  }
+}
+
+.logo {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--color-pd);
+}
+
+.edit-link {
+  color: var(--color-pd);
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.edit-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--color-pd);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+
+.edit-link:hover {
+  color: var(--color-pd);
+}
+
+.edit-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ***FORMULÁRIO */
+
+.link-login-account,
+.link-create-account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.area-login {
+  padding: 50px 30px;
+  background-color: #fff;
+}
+
+.area-login input,
+.area-login .input-cad  {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(211, 208, 208);
+  padding: 7px 15px 7px 35px;
+  color: #020202;
+  font-weight: bold;
+}
+
+.area-login input:focus,
+.area-login .input-cad:focus {
+  border-color: var(--color-pd);
+  transition: border-color 1s;
+}
+
+.area-login .input-cad {
+  width: 100%;
+  padding: 7px 15px 7px 5px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container label {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+}
+
+.bt-access {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  background: var(--color-pd);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 20px 0 15px 0;
+}
+
+.bt-access:hover {
+  background: rgb(255, 255, 255);
+  border: 2px solid var(--color-pd);
+  color: var(--color-pd);
+  font-weight: bold;
+}
+
+.link-account {
+  display: block;
+  color: var(--color-pd);
+}
+
+.link-account:hover {
+  color: var(--color-pd);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.subtext {
+  border-bottom: 3px solid var(--color-pd);
+}
+
+.annunce {
+  border: 3px solid #fff;
+  background: var(--color-pd);
+  color: #fff;
+}
+
+.border-effect {
+  margin: 60px;
+}
+
+.area-login h2,
+.border-effect h2 {
+  font-weight: bold;
+  font-size: 3.5em;
+  color: var(--color-pd);
+}

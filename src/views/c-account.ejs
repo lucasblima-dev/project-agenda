@@ -1,0 +1,52 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+
+<main class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 mt-md-4">
+
+            <%- include('includes/messages') %>
+
+            <div class="row mt-3">
+                <div class="col-lg-6 d-none d-lg-block annunce">
+                    <div class="border-effect">
+                        <h2 class="text-center font-weight-bold mb-5 text-light">You're new?</h2>
+                        <p class="text-center pt-5">
+                            Create your account, make login and enjoy your Agenda.
+                        </p>
+                    </div>
+                </div>
+                <div class="area-login col-lg-6 bg-white">
+                    <h2 class="text-left mb-5 font-weight-bold text-dark"><span class="subtext">Cr</span>eate <span
+                            class="subtext">Ac</span>count</h2>
+                    <form class="text-center form-account" action="/login/register" method="POST" autocomplete="off">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="form-group">
+                            <label class="d-block text-left">Name: <span class="text-danger">*</span></label>
+                            <input class="input-cad" type="text" placeholder="Enter your name" name="firstName">
+                            <div class="text-left text-danger font-wight-bold feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="d-block text-left">E-mail: <span class="text-danger">*</span></label>
+                            <input class="input-cad" type="email" placeholder="Enter your e-mail" name="email">
+                            <div class="text-left text-danger font-wight-bold feedback"></div>
+                        </div>
+                        <div class="">
+                            <label class="d-block text-left">Password: <span class="text-danger">*</span></label>
+                            <input class="input-cad" type="password" placeholder="Enter your password" name="password">
+                            <div class="text-left text-danger font-wight-bold feedback"></div>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100  bt-access">Submit</button>
+                        <div class="link-create-account">
+                            <span class="mr-1">Have account?</span><a class="link-account" href="/login">Sign in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</mai>
+
+<%- include('includes/footer.ejs') %>

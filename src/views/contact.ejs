@@ -1,0 +1,48 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+
+<main class="container my-4">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 mt-md-4">
+            <div class="area-login bg-white mt-md-3">
+                <%- include('includes/messages') %>
+
+                <% if(contact._id) { %>
+                    <h2 class="text-center mb-4">Edit your contact bellow:</h2>
+
+                    <form action="/contact/edit/<%= contact._id %>" method="POST">
+                <%} else {%>
+                    <h2 class="text-center mb-4">Make your contact bellow:</h2>
+
+                    <form class="form-contact" action="/contact/register" method="POST">
+                <% } %>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="form-group">
+                            <label class="text-left">First Name: <span class="text-danger">*</span></label>
+                            <input type="text" value="<%=contact.firstName%>" class="input-cad" placeholder="Enter your name" name="firstName">
+                            <div class="text-left text-danger font-wight-bold feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-left">Last Name:</label>
+                            <input type="text" value="<%=contact.lastName%>" class="input-cad" placeholder="Enter your last name" name="lastName">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-left">Cellphone: <span class="text-danger">*</span></label>
+                            <input type="tel" value="<%=contact.cellphone%>" class="input-cad" placeholder="Example: 00 00000-0000" name="cellphone">
+                            <div class="text-left text-danger font-wight-bold feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-left">E-mail: <span class="text-danger"> *</span></label>
+                            <input type="email" value="<%=contact.email%>" class="input-cad" placeholder="Example: user@mail.com" name="email">
+                            <div class="text-left text-danger font-wight-bold feedback"></div>   
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100 bt-access">Submit</button>
+                    </form>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</main>
+
+<%- include('includes/footer.ejs') %>
